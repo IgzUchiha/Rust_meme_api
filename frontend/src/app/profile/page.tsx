@@ -1,17 +1,53 @@
 'use client';
 
 import { useSession } from 'next-auth/react';
-import { useAccount } from 'wagmi';
+import { useAccount, useReadContract, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
 import { useRouter } from 'next/navigation';
+import { formatEther } from 'viem';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { User, Wallet, Mail, CheckCircle2, XCircle } from 'lucide-react';
+import { User, Wallet, Mail, CheckCircle2, XCircle, Coins, Loader2 } from 'lucide-react';
 import Image from 'next/image';
+import { MEME_REWARDS_ABI, MEME_REWARDS_ADDRESS, REWARD_PER_LIKE } from '@/lib/contract';
 
 export default function ProfilePage() {
   const { data: session, status } = useSession();
   const { address, isConnected } = useAccount();
   const router = useRouter();
+
+  // Read pending rewards from contract
+  const { data: pendingRewards, refetch: refetchRewards } = useReadContract({
+    address: MEME_REWARDS_ADDRESS as `0x${string}`,
+    abi: MEME_REWARDS_ABI,
+    functionName: 'getPendingRewards',
+    args: address ? [address] : undefined,
+  });
+
+  // Claim rewards
+  const { writeContract, data: claimHash, isPending: isClaimPending } = useWriteContract();
+  const { isLoading: isClaimConfirming, isSuccess: isClaimSuccess } = useWaitForTransactionReceipt({
+    hash: claimHash,
+  });
+
+  const handleClaimRewards = async () => {
+    if (!address) return;
+    
+    try {
+      writeContract({
+        address: MEME_REWARDS_ADDRESS as `0x${string}`,
+        abi: MEME_REWARDS_ABI,
+        functionName: 'claimPendingRewards',
+      });
+    } catch (error) {
+      console.error('Failed to claim rewards:', error);
+      alert('Failed to claim rewards. Please try again.');
+    }
+  };
+
+  // Refetch rewards after successful claim
+  if (isClaimSuccess) {
+    refetchRewards();
+  }
 
   if (status === 'loading') {
     return (
@@ -110,6 +146,59 @@ export default function ProfilePage() {
                 </div>
               )}
             </div>
+
+            {/* Rewards Section */}
+            {isConnected && address && (
+              <div className="border-t pt-6">
+                <h4 className="font-semibold mb-4 flex items-center gap-2">
+                  <Coins className="h-5 w-5" />
+                  Meme Rewards
+                </h4>
+                
+                <div className="space-y-4">
+                  <div className="bg-gradient-to-r from-primary/10 to-purple-500/10 p-4 rounded-lg">
+                    <p className="text-sm text-muted-foreground mb-1">Pending Rewards</p>
+                    <p className="text-2xl font-bold">
+                      {pendingRewards ? formatEther(pendingRewards as bigint) : '0'} ETH
+                    </p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      Earned from {pendingRewards ? Number(pendingRewards) / Number(REWARD_PER_LIKE) : 0} likes
+                    </p>
+                  </div>
+
+                  <Button
+                    onClick={handleClaimRewards}
+                    disabled={!pendingRewards || pendingRewards === BigInt(0) || isClaimPending || isClaimConfirming}
+                    className="w-full"
+                    size="lg"
+                  >
+                    {isClaimPending || isClaimConfirming ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        {isClaimPending ? 'Confirming...' : 'Processing...'}
+                      </>
+                    ) : (
+                      <>
+                        <Coins className="mr-2 h-4 w-4" />
+                        Claim Rewards
+                      </>
+                    )}
+                  </Button>
+
+                  {isClaimSuccess && (
+                    <div className="p-3 bg-green-500/10 border border-green-500/20 rounded-lg">
+                      <p className="text-sm text-green-600 font-medium">
+                        ✅ Rewards claimed successfully!
+                      </p>
+                    </div>
+                  )}
+
+                  <p className="text-xs text-muted-foreground">
+                    💡 You earn 0.001 ETH for every like on your memes. Rewards are stored in the smart contract and can be claimed anytime.
+                  </p>
+                </div>
+              </div>
+            )}
           </CardContent>
         </Card>
 

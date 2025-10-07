@@ -3,10 +3,13 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useAccount, useWriteContract, useWaitForTransactionReceipt } from 'wagmi';
+import { parseEther } from 'viem';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Heart, MessageCircle, ImageIcon } from 'lucide-react';
+import { Heart, MessageCircle, ImageIcon, Coins } from 'lucide-react';
 import { likeMeme, type Meme } from '@/lib/api';
+import { MEME_REWARDS_ABI, MEME_REWARDS_ADDRESS, REWARD_PER_LIKE } from '@/lib/contract';
 
 interface MemeCardProps {
   meme: Meme;
@@ -16,18 +19,44 @@ export function MemeCard({ meme: initialMeme }: MemeCardProps) {
   const [meme, setMeme] = useState(initialMeme);
   const [isLiking, setIsLiking] = useState(false);
   const [hasLiked, setHasLiked] = useState(false);
+  const { address, isConnected } = useAccount();
+  const { writeContract, data: hash } = useWriteContract();
+  const { isLoading: isConfirming } = useWaitForTransactionReceipt({ hash });
 
   const handleLike = async (e: React.MouseEvent) => {
     e.preventDefault(); // Prevent navigation when clicking heart
     if (isLiking || hasLiked) return;
 
+    // Check if wallet is connected
+    if (!isConnected || !address) {
+      alert('Please connect your wallet to send a tip!');
+      return;
+    }
+
+    // Check if meme has a creator address
+    if (!meme.evm_address) {
+      alert('This meme has no creator address to tip!');
+      return;
+    }
+
     setIsLiking(true);
     try {
+      // Send ETH tip via smart contract
+      writeContract({
+        address: MEME_REWARDS_ADDRESS as `0x${string}`,
+        abi: MEME_REWARDS_ABI,
+        functionName: 'depositLikeReward',
+        args: [meme.evm_address as `0x${string}`, BigInt(meme.id)],
+        value: BigInt(REWARD_PER_LIKE),
+      });
+
+      // Update like count in backend
       const updatedMeme = await likeMeme(meme.id);
       setMeme(updatedMeme);
       setHasLiked(true);
     } catch (error) {
       console.error('Failed to like meme:', error);
+      alert('Failed to send tip. Please try again.');
     } finally {
       setIsLiking(false);
     }
