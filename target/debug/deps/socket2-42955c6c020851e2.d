@@ -1,0 +1,11 @@
+/Users/igmercastillo/Rust_meme_api/target/debug/deps/libsocket2-42955c6c020851e2.rmeta: /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/lib.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/sockaddr.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/socket.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/sockref.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/sys/unix.rs
+
+/Users/igmercastillo/Rust_meme_api/target/debug/deps/libsocket2-42955c6c020851e2.rlib: /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/lib.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/sockaddr.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/socket.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/sockref.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/sys/unix.rs
+
+/Users/igmercastillo/Rust_meme_api/target/debug/deps/socket2-42955c6c020851e2.d: /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/lib.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/sockaddr.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/socket.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/sockref.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/sys/unix.rs
+
+/Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/lib.rs:
+/Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/sockaddr.rs:
+/Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/socket.rs:
+/Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/sockref.rs:
+/Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/socket2-0.5.4/src/sys/unix.rs:

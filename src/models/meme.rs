@@ -4,7 +4,7 @@ use diesel::r2d2::{ConnectionManager, Pool};
 use dotenv::dotenv;
 use std::env;
 #[macro_use]
-extern crate diesel;
+
 pub mod schema {
     table! {
         memes (id) {
@@ -17,7 +17,7 @@ pub mod schema {
 }
 
 #[derive(Queryable, Insertable)]
-#[table_name = "memes"]
+[diesel(table_name = "memes")]
 pub struct Meme {
     pub id: i32,
     pub caption: String,

@@ -1,0 +1,14 @@
+/Users/igmercastillo/Rust_meme_api/target/debug/deps/libserde-dd164a30f370067d.rmeta: /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/igmercastillo/Rust_meme_api/target/debug/build/serde-496277053e86700a/out/private.rs
+
+/Users/igmercastillo/Rust_meme_api/target/debug/deps/libserde-dd164a30f370067d.rlib: /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/igmercastillo/Rust_meme_api/target/debug/build/serde-496277053e86700a/out/private.rs
+
+/Users/igmercastillo/Rust_meme_api/target/debug/deps/serde-dd164a30f370067d.d: /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/igmercastillo/Rust_meme_api/target/debug/build/serde-496277053e86700a/out/private.rs
+
+/Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/Users/igmercastillo/Rust_meme_api/target/debug/build/serde-496277053e86700a/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/igmercastillo/Rust_meme_api/target/debug/build/serde-496277053e86700a/out

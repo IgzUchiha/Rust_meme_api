@@ -1,0 +1,11 @@
+/Users/igmercastillo/Rust_meme_api/target/debug/deps/libhttparse-ee3be311b34b2b50.rmeta: /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/lib.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/iter.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/macros.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/simd/mod.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/simd/fallback.rs
+
+/Users/igmercastillo/Rust_meme_api/target/debug/deps/libhttparse-ee3be311b34b2b50.rlib: /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/lib.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/iter.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/macros.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/simd/mod.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/simd/fallback.rs
+
+/Users/igmercastillo/Rust_meme_api/target/debug/deps/httparse-ee3be311b34b2b50.d: /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/lib.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/iter.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/macros.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/simd/mod.rs /Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/simd/fallback.rs
+
+/Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/lib.rs:
+/Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/iter.rs:
+/Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/macros.rs:
+/Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/simd/mod.rs:
+/Users/igmercastillo/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/httparse-1.8.0/src/simd/fallback.rs:

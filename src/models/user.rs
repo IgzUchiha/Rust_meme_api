@@ -4,7 +4,7 @@ use diesel::r2d2::{ConnectionManager, Pool};
 use dotenv::dotenv;
 use std::env;
 #[macro_use]
-extern crate diesel;
+
 pub mod schema {
     table! {
         users (id) {
@@ -18,8 +18,8 @@ pub mod schema {
     }
 }
 
-#[derive(Queryable, Insertable)]
-#[table_name = "users"]
+#[derive(Queryable, Insertable)];
+#[diesel(table_name = "users")];
 pub struct User {
     pub id: i32,
     pub first_name: String,
