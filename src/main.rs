@@ -27,6 +27,15 @@ struct AppState {
     next_id: Mutex<i32>,
 }
 
+// Health check endpoint
+async fn health_check() -> impl Responder {
+    HttpResponse::Ok().json(serde_json::json!({
+        "status": "ok",
+        "message": "Rust Meme API is running!",
+        "version": "1.0.0"
+    }))
+}
+
 async fn get_memes(data: web::Data<AppState>) -> impl Responder {
     let memes = data.memes.lock().unwrap();
     let mut sorted_memes = memes.clone();
@@ -195,6 +204,8 @@ async fn main() -> std::io::Result<()> {
             .app_data(app_state.clone())
             .wrap(cors)
             .wrap(middleware::Logger::default())
+            .route("/", web::get().to(health_check))
+            .route("/health", web::get().to(health_check))
             .route("/memes", web::get().to(get_memes))
             .route("/memes", web::post().to(upload_meme))
             .route("/memes/{id}/like", web::post().to(like_meme))
