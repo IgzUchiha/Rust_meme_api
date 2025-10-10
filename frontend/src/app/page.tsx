@@ -18,7 +18,7 @@ export default async function HomePage() {
     <div className="container py-12">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Best Memes Gallery</h1>
+          <h1 className="text-4xl font-bold mb-4">For You Page</h1>
           <p className="text-muted-foreground text-lg">
             Discover and share the most hilarious memes on the blockchain
           </p>

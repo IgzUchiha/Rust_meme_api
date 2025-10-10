@@ -154,28 +154,19 @@ async fn main() -> std::io::Result<()> {
     let initial_memes = vec![
         Meme {
             id: 1,
-            caption: "Troll Face".to_string(),
-            tags: "classic".to_string(),
-            image: "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Trollface_non-free.png/220px-Trollface_non-free.png".to_string(),
-            evm_address: None,
-            likes: 5,
-            comment_count: 2,
-        },
-        Meme {
-            id: 2,
             caption: "Doge".to_string(),
             tags: "classic, crypto".to_string(),
             image: "https://i.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg".to_string(),
-            evm_address: None,
+            evm_address: Some("0x39D0F19273036293764262aCb5115F223aEF8f79".to_string()),
             likes: 12,
             comment_count: 3,
         },
         Meme {
-            id: 3,
+            id: 2,
             caption: "Pepe the Frog".to_string(),
             tags: "classic, rare".to_string(),
             image: "https://i.kym-cdn.com/entries/icons/original/000/017/618/pepefroggie.jpg".to_string(),
-            evm_address: None,
+            evm_address: Some("0x2555ea784eBDb81C1704f8b749Dbbc68aDaCB723".to_string()),
             likes: 8,
             comment_count: 1,
         },
@@ -183,10 +174,14 @@ async fn main() -> std::io::Result<()> {
 
     let app_state = web::Data::new(AppState {
         memes: Mutex::new(initial_memes),
-        next_id: Mutex::new(4),
+        next_id: Mutex::new(3),
     });
 
-    println!("🚀 Server starting on http://127.0.0.1:8000");
+    // Get port from environment variable or default to 8000
+    let port = std::env::var("PORT").unwrap_or_else(|_| "8000".to_string());
+    let bind_address = format!("0.0.0.0:{}", port);
+    
+    println!("🚀 Server starting on {}", bind_address);
     println!("📁 Uploads will be saved to ./uploads/");
     
     HttpServer::new(move || {
@@ -206,7 +201,7 @@ async fn main() -> std::io::Result<()> {
             // Serve uploaded files
             .service(fs::Files::new("/uploads", "./uploads").show_files_listing())
     })
-    .bind("127.0.0.1:8000")?
+    .bind(&bind_address)?
     .run()
     .await
 }

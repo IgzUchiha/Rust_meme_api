@@ -1,0 +1,12 @@
+target/
+.git/
+.gitignore
+*.md
+.env
+.env.*
+node_modules/
+frontend/
+contracts/
+uploads/
+*.log
+.DS_Store

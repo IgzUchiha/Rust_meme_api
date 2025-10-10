@@ -1,9 +1,17 @@
 import { getDefaultConfig } from '@rainbow-me/rainbowkit';
-import { mainnet, polygon, optimism, arbitrum, base } from 'wagmi/chains';
+import { mainnet, polygon, optimism, arbitrum, base, sepolia, polygonZkEvmCardona } from 'wagmi/chains';
 
 export const config = getDefaultConfig({
   appName: 'Meme API',
   projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID || 'YOUR_PROJECT_ID',
-  chains: [mainnet, polygon, optimism, arbitrum, base],
+  chains: [
+    mainnet,
+    sepolia,
+    polygon,
+    polygonZkEvmCardona,
+    optimism,
+    arbitrum,
+    base,
+  ],
   ssr: true,
 });
